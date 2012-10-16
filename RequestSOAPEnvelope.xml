@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:tns="urn:WSDL_WS_KELOMPOK_X.wsdl">
+	<SOAP-ENV:Header>
+		<AuthSoapHeader>
+			<UserName>d3NjbGllbnQ=</UserName>
+			<Password>c2VjcmV0</Password>
+		</AuthSoapHeader>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<tns:list_prodi xmlns:tns="urn:WSDL_WS_KELOMPOK_X.wsdl">
+			<p_key_search xsi:type="xsd:string">ja</p_key_search>
+			<p_page xsi:type="xsd:integer">0</p_page>
+			<p_page_size xsi:type="xsd:integer">2</p_page_size>
+		</tns:list_prodi>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

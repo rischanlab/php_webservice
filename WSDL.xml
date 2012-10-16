@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:WSDL_WS_KELOMPOK_X.wsdl"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:WSDL_WS_KELOMPOK_X.wsdl">
+	<types>
+		<xsd:schema targetNamespace="urn:WSDL_WS_KELOMPOK_X.wsdl">
+			<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+			<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+		</xsd:schema>
+	</types>
+	<message name="list_prodiRequest">
+		<part name="p_key_search" type="xsd:string" />
+		<part name="p_page" type="xsd:integer" />
+		<part name="p_page_size" type="xsd:integer" />
+	</message>
+
+	<message name="list_prodiResponse">
+		<part name="return" type="xsd:string" />
+	</message>
+	<portType name="WS_KELOMPOK_XPortType">
+		<operation name="list_prodi">
+			<documentation>Deskripsi fungsi list_prodi</documentation>
+			<input message="tns:list_prodiRequest" />
+			<output message="tns:list_prodiResponse" />
+		</operation>
+	</portType>
+	<binding name="WS_KELOMPOK_XBinding" type="tns:WS_KELOMPOK_XPortType">
+
+		<soap:binding style="rpc"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="list_prodi">
+			<soap:operation soapAction="urn:WSDL_WS_KELOMPOK_X.wsdl#list_prodi"
+				style="rpc" />
+			<input>
+				<soap:body use="encoded" namespace="urn:WSDL_WS_KELOMPOK_X.wsdl"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</input>
+			<output>
+				<soap:body use="encoded" namespace="urn:WSDL_WS_KELOMPOK_X.wsdl"
+					encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+			</output>
+		</operation>
+	</binding>
+	<service name="WS_KELOMPOK_X">
+		<port name="WS_KELOMPOK_XPort" binding="tns:WS_KELOMPOK_XBinding">
+			<soap:address
+				location="http://localhost/pemjar/1.wss/index.php" />
+
+		</port>
+	</service>
+</definitions>
